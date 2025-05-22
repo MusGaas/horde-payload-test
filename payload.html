@@ -1,9 +1,11 @@
 <html>
   <body>
     <script>
-      alert("WebView execution!");
-      if (window.ReactNativeWebView) {
-        window.ReactNativeWebView.postMessage("Bridge active");
+      if (typeof brazeInternalBridge !== "undefined") {
+        alert("🔥 Bridge exposed!");
+        brazeInternalBridge.logClick(); // Or any callable method
+      } else {
+        alert("No bridge");
       }
     </script>
   </body>
